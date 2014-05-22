@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modulegroup>
+  <name>Questionnaire</name>
+  <description>
+    The Questionnaire provides a means of creating pools of questions that can be posed and evaluated.
+  </description>
+  <modules>
+    <module type="admin"
+            guid="77585af18ad41ac543a7191ee610be4d"
+            name="Questionnaire"
+            class="edmodule_questionnaire"
+            file="edmodule_questionnaire.php"
+            glyph="questionnaire.png">
+      Backend interface for creating and managing questions.
+    </module>
+    <module type="connector"
+            guid="36d94a3fdaf122d8214776b34ffdb012"
+            name="Questionnaire Connector"
+            class="PapayaQuestionnaireConnector"
+            file="Connector.php">
+      Connector to retrieve question pools, question groups and questions themselves.
+    </module>
+    <module type="cronjob"
+            guid="5636410616357f4b74e745aaefe12b9d"
+            name="Questionnaire Configuration Change Alert"
+            class="PapayaQuestionnaireChecksumCronjob"
+            file="Checksum/Cronjob.php">
+      Sends an alert email as soon as the questionnaire configuration changes.
+    </module>
+  </modules>
+  <tables>
+    <table name="questionnaire_question" />
+    <table name="questionnaire_group" />
+    <table name="questionnaire_pool" />
+    <table name="questionnaire_answer" />
+    <table name="questionnaire_answer_options" />
+    <table name="questionnaire_answer_set" />
+    <table name="questionnaire_answer_set_meta" />
+  </tables>
+</modulegroup>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="questionnaire_answer_options" prefix="yes" type="transactions">
+  <fields>
+    <field name="question_id" type="integer" size="4" null="no"/>
+    <field name="answer_choice_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="answer_choice_text" type="string" size="65535" null="no"/>
+    <field name="answer_choice_value" type="string" size="65535" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>answer_choice_id</field>
+    </primary-key>
+    <key name="fk_papaya_questionnaire_answer_options_papaya_questionnaire_q">
+      <field>question_id</field>
+    </key>
+  </keys>
+</table>

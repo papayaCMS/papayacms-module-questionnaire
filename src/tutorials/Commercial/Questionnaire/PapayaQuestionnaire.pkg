@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+"http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd">
+<refentry id="{@id}">
+  <refnamediv>
+    <refname>PapayaQuestionnaire package description</refname>
+
+    <refpurpose>Explains purpose and structure of the Questionnaire
+    module.</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <author>papaya Software GmbH</author>
+  </refsynopsisdiv>
+
+  <refsect1 id="{@id wlab-questionnaire-group-page}">
+    <title>Purpose</title>
+
+    <para>The Questionnaire module is intended to provide a generic base for
+    creating, posing and evaluating arbitrary questionnaires or surveys.
+    Therefore apart from generic question modules, customized modules can be
+    implemented. </para>
+  </refsect1>
+
+  <refsect1 id="{@id wlab-questionnaire-group-page}">
+    <title>Structure</title>
+
+    <para>Questions are organized in question groups which again belong to a
+    specific question pool. A question pool can also be looked upon as a
+    questionnaire. It may contain only one group. Groups are merely a means of
+    supporting structured questionnaires or such consisting of multiple
+    parts.</para>
+
+    <para>The class structure is not overly complex:</para>
+
+    <figure>
+      <title>Class Structure of PapayaQuestionnaire</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="figures/PapayaQuestionnaireStructure.png"
+                     scalefit="1" />
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>The Administration class uses a separate class for Dialogs and one
+    for Output (Backend-XML, e.g. listviews). The connector provides access to
+    the storage (questions, groups and pools) as well as to answers. It
+    provides access to the question creator which can give a list of known
+    question types and provide instances of question modules. Question modules
+    have to implement the QuestionnaireQuestion interface and should be
+    derived from the Abstract question class. </para>
+
+    <note>
+      <para>The implementation is not yet fixed, i.e. some methods may be
+      added to the interface and change it therefore. </para>
+    </note>
+
+    <para>The Dialog classes are merely helper classes to prevent need for
+    instantiating base_dialog and base_msgdialog directly. They can be
+    replaced after a generic implementation or changes making those classes
+    testable have arrived.</para>
+
+    <para>External modules should only use the connector directly or the
+    question creator provided by it or the question objects provided by the
+    creator. This may be changed if an improved approach is agreed
+    upon.</para>
+  </refsect1>
+
+  <refsect1 id="{@id wlab-questionnaire-group-page}">
+    <title>Open Issues</title>
+
+    <para>Question modules need to be able to be registered to the system or
+    the questionnaire module. Either a new papaya module type needs to be
+    added or a generic approach implemented. Modules should be able to come
+    with own module types that can be recognized by the system. It could also
+    be checked on retrieving a list of modules, whether they implement a given
+    interface.</para>
+  </refsect1>
+</refentry>

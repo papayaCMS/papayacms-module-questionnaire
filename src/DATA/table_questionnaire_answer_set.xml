@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="questionnaire_answer_set" prefix="yes" type="transactions">
+  <fields>
+    <field name="answer_set_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="user_id" type="string" size="100" null="no"/>
+    <field name="subject_id" type="string" size="100" null="no"/>
+    <field name="answer_timestamp" type="integer" size="4" null="no"/>
+    <field name="answer_deactivated" type="integer" size="4" null="yes"/>
+    <field name="answer_deleted" type="integer" size="4" null="yes"/>
+    <field name="answer_restricted" type="integer" size="4" null="no" default="0"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>answer_set_id</field>
+    </primary-key>
+    <key name="answer_timestamp">
+      <field>answer_timestamp</field>
+    </key>
+    <key name="user_id">
+      <field>user_id</field>
+    </key>
+    <key name="subject_id">
+      <field>subject_id</field>
+    </key>
+  </keys>
+</table>

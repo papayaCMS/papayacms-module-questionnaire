@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="questionnaire_group" prefix="yes" type="transactions">
+  <fields>
+    <field name="question_group_id" type="integer" size="4" null="no" autoinc="yes"/>
+    <field name="question_pool_id" type="integer" size="4" null="no"/>
+    <field name="question_group_identifier" type="string" size="8" null="no"/>
+    <field name="question_group_position" type="integer" size="4" null="no"/>
+    <field name="question_group_name" type="string" size="255" null="no"/>
+    <field name="question_group_subtitle" type="string" size="255" null="no"/>
+    <field name="question_group_text" type="string" size="65535" null="no"/>
+    <field name="question_group_min_answers" type="integer" size="4" null="no"/>
+  </fields>
+  <keys>
+    <primary-key>
+      <field>question_group_id</field>
+    </primary-key>
+    <key name="fk_papaya_questionnaire_group_papaya_questionnaire_pool1">
+      <field>question_pool_id</field>
+    </key>
+  </keys>
+</table>

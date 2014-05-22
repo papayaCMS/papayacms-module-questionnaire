@@ -1,0 +1,102 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "79a14cfea1fd74f214d1e8261ebd659a",
+    "packages": [
+        {
+            "name": "papaya/cms-core",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://SystemVCS:Fino8Wae@svn.dim/papayaCMS",
+                "reference": "/trunk/papayaCMS/papaya-lib/@39709"
+            },
+            "type": "library",
+            "description": "papaya CMS core framework",
+            "time": "2014-03-31 17:20:11"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "papaya/cms-administration",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://SystemVCS:Fino8Wae@svn.dim/papayaCMS",
+                "reference": "/trunk/papayaCMS/papaya/@39709"
+            },
+            "require": {
+                "papaya/composer-plugins": "*"
+            },
+            "type": "papaya-administration-ui",
+            "time": "2014-03-31 15:50:14"
+        },
+        {
+            "name": "papaya/composer-plugins",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://SystemVCS:Fino8Wae@svn.dim/papayaCMS-composer",
+                "reference": "/trunk/@12"
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Papaya\\Composer\\InstallerPlugin"
+            },
+            "autoload": {
+                "psr-0": {
+                    "Papaya\\Composer": "src/"
+                }
+            },
+            "description": "papaya CMS Composer Plugins",
+            "time": "2014-01-08 13:04:51"
+        },
+        {
+            "name": "papaya/template-responsive",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://SystemVCS:Fino8Wae@svn.dim/papayaCMS",
+                "reference": "/trunk/papayaCMS/papaya-data/templates/responsive/@39709"
+            },
+            "require": {
+                "papaya/composer-plugins": "*"
+            },
+            "type": "papaya-template",
+            "time": "2014-03-31 17:00:40"
+        },
+        {
+            "name": "papaya/theme-dynamic",
+            "version": "dev-trunk",
+            "source": {
+                "type": "svn",
+                "url": "http://SystemVCS:Fino8Wae@svn.dim/papayaCMS",
+                "reference": "/trunk/papayaCMS/papaya-themes/dynamic/@39709"
+            },
+            "require": {
+                "papaya/composer-plugins": "*",
+                "papaya/template-responsive": "*"
+            },
+            "type": "papaya-theme",
+            "time": "2014-03-21 12:03:38"
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

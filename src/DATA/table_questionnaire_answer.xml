@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<table name="questionnaire_answer" prefix="yes" type="transactions">
+  <fields>
+    <field name="answer_set_id" type="integer" size="4" null="no"/>
+    <!-- begin legacy fields -->
+    <field name="question_id" type="integer" size="4" null="no"/>
+    <field name="question_identifier" type="string" size="8" null="no"/>
+    <field name="user_id" type="string" size="100" null="no"/>
+    <field name="subject_id" type="string" size="100" null="no"/>
+    <field name="answer_value" type="string" size="255" null="no"/>
+    <field name="answer_deactivated" type="integer" size="4" null="no"/>
+    <field name="answer_timestamp" type="integer" size="4" null="no"/>
+    <!-- end legacy fields -->
+    <field name="answer_choice_id" type="integer" size="4" null="no"/>
+  </fields>
+  <keys>
+    <!-- begin legacy keys -->
+    <key name="answer_timestamp">
+      <field>answer_timestamp</field>
+    </key>
+    <key name="answer_set_id">
+      <field>answer_set_id</field>
+    </key>
+    <!-- end legacy keys -->
+    <key name="fk_table1_papaya_questionnaire_answer_set1">
+      <field>answer_set_id</field>
+    </key>
+    <key name="fk_papaya_questionnaire_answer_papaya_questionnaire_answer_set1">
+      <field>answer_set_id</field>
+    </key>
+    <key name="fk_papaya_questionnaire_answer_papaya_questionnaire_answer_ch1">
+      <field>answer_choice_id</field>
+    </key>
+  </keys>
+</table>
